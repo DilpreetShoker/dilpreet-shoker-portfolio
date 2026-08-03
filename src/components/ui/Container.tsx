@@ -1,4 +1,7 @@
 import type { ReactNode } from "react";
+
+import { layout } from "@/theme/layout";
+import { spacing } from "@/theme/spacing";
 import { cn } from "@/lib/utils";
 
 interface ContainerProps {
@@ -9,11 +12,13 @@ interface ContainerProps {
 export default function Container({
                                       children,
                                       className,
-                                  }: ContainerProps) {
+                                  }: Readonly<ContainerProps>) {
     return (
         <div
             className={cn(
-                "mx-auto w-full max-w-7xl px-6 lg:px-8",
+                "mx-auto w-full",
+                layout.contentMax,
+                spacing.pageX,
                 className,
             )}
         >

@@ -5,6 +5,8 @@
 @theme {
     --color-background: #141516;
 
+    --color-section: #1c222b;
+
     --color-surface: #202225;
     --color-surface-hover: #2a2d31;
 
@@ -19,6 +21,8 @@
 
 :root {
     color-scheme: dark;
+    --navbar-height: 4.5rem;
+    --shadow-section: 0 -30px 80px rgba(0, 0, 0, 0.65);
 }
 
 html {

@@ -1,22 +1,22 @@
-import type { ButtonHTMLAttributes, ReactNode } from "react";
+import type { ButtonHTMLAttributes } from "react";
+
 import { cn } from "@/lib/utils";
 
-type ButtonVariant = "primary" | "secondary" | "ghost";
-type ButtonSize = "sm" | "md" | "lg";
+export type ButtonVariant = "primary" | "secondary" | "ghost";
+export type ButtonSize = "sm" | "md" | "lg";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    children: ReactNode;
     variant?: ButtonVariant;
     size?: ButtonSize;
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
     primary:
-        "bg-primary text-background hover:bg-primary-hover focus-visible:outline-primary",
+        "bg-primary text-white hover:bg-primary-hover focus-visible:outline-primary",
     secondary:
-        "border border-border bg-transparent text-foreground hover:bg-white/5 focus-visible:outline-foreground",
+        "border border-border bg-surface text-foreground hover:bg-surface-hover",
     ghost:
-        "bg-transparent text-muted hover:bg-white/5 hover:text-foreground focus-visible:outline-foreground",
+        "bg-transparent text-muted hover:bg-surface hover:text-foreground focus-visible:outline-foreground",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
@@ -25,6 +25,26 @@ const sizeStyles: Record<ButtonSize, string> = {
     lg: "px-6 py-3 text-base",
 };
 
+export function buttonStyles({
+                                 variant = "primary",
+                                 size = "md",
+                                 className,
+                             }: {
+    variant?: ButtonVariant;
+    size?: ButtonSize;
+    className?: string;
+} = {}) {
+    return cn(
+        "inline-flex items-center justify-center rounded-lg font-semibold",
+        "transition-colors duration-200",
+        "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
+        "disabled:pointer-events-none disabled:opacity-50",
+        variantStyles[variant],
+        sizeStyles[size],
+        className,
+    );
+}
+
 export default function Button({
                                    children,
                                    variant = "primary",
@@ -32,18 +52,11 @@ export default function Button({
                                    className,
                                    type = "button",
                                    ...props
-                               }: ButtonProps) {
+                               }: Readonly<ButtonProps>) {
     return (
         <button
             type={type}
-            className={cn(
-                "inline-flex items-center justify-center rounded-lg font-semibold transition-colors duration-200",
-                "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
-                "disabled:pointer-events-none disabled:opacity-50",
-                variantStyles[variant],
-                sizeStyles[size],
-                className,
-            )}
+            className={buttonStyles({ variant, size, className })}
             {...props}
         >
             {children}

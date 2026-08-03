@@ -1,25 +1,53 @@
+import type { AboutItem } from "@/types/profile";
+
+const aboutItems = [
+  {
+    title: "Software Engineer",
+    description: "Building production software at Sky.",
+    image: "/images/f1-car.JPEG",
+    imageAlt: "Dilpreet at the Sky office",
+    focus: "center 35%",
+  },
+  {
+    title: "Warwick Graduate",
+    description: "BSc (Hons) Computer Science.",
+    image: "/images/graduation-cap-throw.JPEG",
+    imageAlt: "Dilpreet throwing his graduation cap at University of Warwick campus",
+    focus: "center 35%",
+  },
+  {
+    title: "Cricket Enthusiast",
+    description:
+      "Player. Captain. Supporter. And content creator at Hayes Cricket Club.",
+    image: "/images/cricket-defence.JPEG",
+    imageAlt: "Dilpreet playing cricket",
+    focus: "center 45%",
+  },
+  {
+    title: "Traveler",
+    description:
+      "Curious about the world and want to explore every little corner.",
+    image: "/images/skiing.JPEG",
+    imageAlt: "Dilpreet skiing in the alps",
+    focus: "center 40%",
+  },
+] satisfies readonly AboutItem[];
+
 export const profile = {
     name: "Dilpreet Singh",
-    role: "Software Engineer",
-    company: "Sky",
-    location: "London, UK",
 
     hero: {
-        eyebrow: "Software Engineer",
-        title: "Building scalable software for millions of users.",
-        description:
-            "I specialise in Java, Spring Boot, distributed systems and observability, with a focus on building reliable software and solving complex engineering problems.",
+        greeting: "Hi, I'm Dilpreet.",
+        motto: [
+            "Fueled by coffee",
+            "Guided by Clean Code",
+            "Protected by TDD",
+        ],
     },
 
     about: {
-        eyebrow: "About me",
-        title: "Engineer, problem solver and lifelong learner.",
-        paragraphs: [
-            "I am a Software Engineer at Sky, where I design and build backend services that support entertainment experiences across multiple platforms, devices and international markets.",
-            "My main interests include backend engineering, distributed systems, API design and observability. I enjoy taking ownership of technically challenging work and guiding projects from initial design through to production.",
-            "I graduated from the University of Warwick with a degree in Computer Science. My final-year dissertation explored how computer vision and artificial intelligence could be used to evaluate cricket batting techniques.",
-            "Outside of software engineering, cricket is a major part of my life. I enjoy playing competitively, supporting my local club and exploring the relationship between sport, technology and data.",
-        ],
+        title: "A little more about me.",
+        items: aboutItems,
     },
 
     cvPath: "/cv/dilpreet-singh-cv.pdf",

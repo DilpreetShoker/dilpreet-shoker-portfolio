@@ -2,13 +2,20 @@ import Link from "next/link";
 
 import { navigation } from "@/data/navigation";
 import { profile } from "@/data/profile";
+import { layout } from "@/theme/layout";
+import { spacing } from "@/theme/spacing";
+import { cn } from "@/lib/utils";
 
 export default function Navbar() {
     return (
-        <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
+        <header className="sticky top-0 z-50 h-[var(--navbar-height)] border-b border-border bg-background/80 backdrop-blur-md">
             <nav
                 aria-label="Main navigation"
-                className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
+                className={cn(
+                    "mx-auto flex h-full w-full items-center justify-between",
+                    layout.contentMax,
+                    spacing.pageX,
+                )}
             >
                 <Link
                     href="/"
