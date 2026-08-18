@@ -8,10 +8,6 @@ export const navigation = [
         href: "/timeline",
     },
     {
-        label: "Blog",
-        href: "/blog",
-    },
-    {
         label: "Contact",
         href: "/contact",
     },

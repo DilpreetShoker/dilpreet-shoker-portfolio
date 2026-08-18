@@ -34,7 +34,7 @@ const aboutItems = [
 ] satisfies readonly AboutItem[];
 
 export const profile = {
-    name: "Dilpreet Singh",
+    name: "Dilpreet Shoker",
 
     hero: {
         greeting: "Hi, I'm Dilpreet.",
