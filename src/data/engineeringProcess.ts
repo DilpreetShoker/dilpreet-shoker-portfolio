@@ -1,66 +1,71 @@
 import type { EngineeringProcessStep } from "@/types/engineering-process";
 
 export const engineeringProcess = {
-  title: "How I build software.",
+  title: "How I think software should be built.",
 
   introduction:
-    "Every project is different, but the way I approach engineering remains consistent. My process has been shaped by Test-Driven Development, Uncle Bob's Clean Code principles and experience building production systems that need to evolve over time.",
+      "Good software starts with understanding the problem, not writing code. Complex problems should be broken into small, verifiable pieces, with real use cases driving the implementation. Tests should prove meaningful behaviour rather than chase coverage, and every change should be simple to understand, safe to evolve and observable in production.",
 
   steps: [
     {
-      title: "Understand the problem",
+      title: "Start with the problem",
       description:
-        "Before writing a single line of code, I make sure I understand the behaviour the software should exhibit. The goal is not to jump straight into implementation, but to understand what success actually looks like.",
+          "Every piece of work should begin with a clear understanding of the problem being solved, the outcome that is needed and the boundaries around it. Implementation should come after that understanding, not before it.",
     },
     {
-      title: "Define the behaviour",
+      title: "Break down the complexity",
       description:
-        "I describe the feature from the outside in using behaviour tests. These tests become an executable specification, giving me a clear target before I begin focusing on implementation details.",
-    },
-    {
-      title: "Break complexity into smaller problems",
-      description:
-        "When a problem feels overwhelming, I do not try to solve it all at once. I break it into smaller, verifiable behaviours and work through them one at a time.",
-      emphasis: "What is the smallest thing I can make pass?",
-    },
-    {
-      title: "Prove each behaviour",
-      description:
-        "Each smaller problem gets its own focused unit test. These tests document intent, reduce uncertainty and give me confidence that each piece behaves correctly in isolation.",
-    },
-    {
-      title: "Implement the minimum",
-      description:
-        "I write only enough production code to make the current test pass. This keeps the implementation focused, discourages speculative complexity and prevents me from solving problems that do not yet exist.",
-    },
-    {
-      title: "Refactor with confidence",
-      description:
-        "Once the behaviour is protected by tests, I improve the internal design. This is where Uncle Bob's Clean Code principles become especially important: meaningful names, small focused functions, clear responsibilities and abstractions that reveal intent rather than hide it.",
+          "Large problems should be decomposed into smaller, independently deliverable pieces. Each piece should be understandable, implementable and verifiable on its own so that complexity is reduced rather than carried forward.",
       emphasis:
-        "The tests protect behaviour. Refactoring improves the way that behaviour is expressed.",
+          "Turn one difficult problem into several understandable ones.",
     },
     {
-      title: "Build software that is easy to change",
+      title: "Describe the behaviour",
       description:
-        "Software spends far longer being read, maintained and extended than it does being initially written. I aim for the qualities emphasised throughout Clean Code: readable code, clear boundaries, low coupling, high cohesion and components with one well-defined responsibility. Maintainability is not polish added at the end; it is what allows software to survive changing requirements.",
+          "For each smaller problem, behaviour tests should describe the outcome that needs to be achieved. They do not need to cover every possible scenario; their purpose is to prove that the problem being worked on has actually been solved.",
     },
     {
-      title: "Ensure the behaviour still holds",
+      title: "Test the use cases",
       description:
-        "After refactoring, I run the broader behaviour tests again. Unit tests protect the smaller building blocks, while behaviour tests confirm that the system still delivers the outcome originally agreed.",
+          "Unit tests should be driven by real use cases rather than implementation details. Instead of testing every branch or if statement simply to increase coverage, the important question is what user or system scenario would actually cause the code to behave that way. If a meaningful scenario exists, it should be tested.",
+      emphasis:
+          "Don't ask: how do I test this branch? Ask: what use case gets me here?",
     },
     {
-      title: "Observe production",
+      title: "Implement only what is needed",
       description:
-        "Shipping is not the finish line. Instrumentation, tracing, metrics and dashboards help me understand how the software behaves in the real world rather than relying on assumptions.",
-      emphasis: "Instrument. Measure. Then improve.",
+          "Production code should exist to satisfy real, defined use cases. If the tests already describe everything the system currently needs to do, there is little value in adding speculative behaviour or complexity for problems that do not yet exist.",
+      emphasis:
+          "Why write code for a problem that does not exist?",
     },
     {
-      title: "Repeat",
+      title: "Refactor once it works",
       description:
-        "Every release creates new information. Production feedback, changing requirements and lessons from the previous iteration feed into the next problem, restarting the process with a better understanding than before.",
-      emphasis: "Understand. Build. Observe. Learn. Repeat.",
+          "Once the required behaviour is working, the implementation should be improved without changing what it does. Clearer names, simpler responsibilities, better abstractions, reduced duplication and more readable or efficient approaches all make the software easier to evolve.",
+      emphasis:
+          "Make it work. Then make the design better without changing what works.",
+    },
+    {
+      title: "Revalidate the behaviour",
+      description:
+          "After refactoring, the broader behaviour should be verified again. Unit tests protect the smaller use cases, while behaviour tests confirm that the original problem is still solved from the outside.",
+    },
+    {
+      title: "Verify with QA",
+      description:
+          "Automated tests provide confidence, but software should also be validated in the context in which it will actually be used. QA provides another layer of verification before a change reaches production.",
+    },
+    {
+      title: "Deliver to production",
+      description:
+          "Once the change has been validated, CI/CD should provide a repeatable and reliable path to production. Automated builds, tests and deployment checks help ensure that the same verified artefact progresses safely through each environment.",
+    },
+    {
+      title: "Observe and learn",
+      description:
+          "Production is where assumptions meet reality. Logs, metrics, traces and dashboards provide evidence of how the software actually behaves after release and help feed new information back into the next iteration.",
+      emphasis:
+          "Ship. Observe. Learn. Repeat.",
     },
   ] satisfies readonly EngineeringProcessStep[],
 } as const;

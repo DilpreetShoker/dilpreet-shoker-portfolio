@@ -9,6 +9,7 @@ import Section from "@/components/ui/Section";
 import { engineeringProcess } from "@/data/engineeringProcess";
 import { cn } from "@/lib/utils";
 import { spacing } from "@/theme/spacing";
+import { engineeringProcessTheme } from "@/theme/engineeringProcess";
 import { typography } from "@/theme/typography";
 
 export default function EngineeringProcess() {
@@ -27,7 +28,7 @@ export default function EngineeringProcess() {
   });
 
   return (
-    <Section id="engineering-process" className="bg-background">
+    <Section id="engineering-process" className={engineeringProcessTheme.section}>
       <Container>
         <div className="max-w-3xl">
           <h2 className={typography.sectionHeadingBase}>

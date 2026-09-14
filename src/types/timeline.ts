@@ -1,4 +1,4 @@
-export type TimelineCategory = "career" | "education";
+export type TimelineCategory = "career" | "education" | "other";
 
 export interface TimelineImage {
   src: string;

@@ -9,7 +9,7 @@ import { typography } from "@/theme/typography";
 
 export default function Toolbox() {
   return (
-    <Section id="toolbox" className="bg-section">
+    <Section id="toolbox" className="bg-background">
       <Container>
         <div className="max-w-3xl">
           <h2 className={typography.sectionHeadingBase}>

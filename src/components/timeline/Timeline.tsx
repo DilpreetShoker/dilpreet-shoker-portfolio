@@ -8,12 +8,14 @@ import Section from "@/components/ui/Section";
 import { timeline } from "@/data/timeline";
 import { cn } from "@/lib/utils";
 import { elevation } from "@/theme/elevation";
+import type { TimelineCategory } from "@/types/timeline";
 
-type TimelineFilter = "career" | "education";
+type TimelineFilter = TimelineCategory;
 
 const filters: readonly TimelineFilter[] = [
   "career",
   "education",
+  "other",
 ];
 
 export default function Timeline() {

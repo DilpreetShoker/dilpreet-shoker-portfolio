@@ -35,6 +35,19 @@ export const toolbox = {
       ],
     },
     {
+      title: "Cloud & Infrastructure",
+      description:
+          "Working with production services across cloud infrastructure and containerised deployment environments.",
+      icon: "cloud",
+      tools: [
+        { name: "AWS", icon: "cloud" },
+        { name: "EC2", icon: "cloud" },
+        { name: "EKS", icon: "kubernetes" },
+        { name: "Kubernetes", icon: "kubernetes" },
+        { name: "Docker", icon: "container" },
+      ],
+    },
+    {
       title: "Distributed Systems",
       description:
         "Connecting services reliably while managing resilience, performance and scale.",

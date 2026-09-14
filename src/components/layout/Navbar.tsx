@@ -32,7 +32,7 @@ export default function Navbar() {
             onClick={closeMenu}
             className="text-lg font-semibold tracking-tight text-foreground"
           >
-            Dilpreet.
+            Dilpreet Shoker
           </Link>
 
           <div className="hidden items-center gap-8 md:flex">
