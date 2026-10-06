@@ -13,19 +13,19 @@ export const engineeringProcess = {
           "Every piece of work should begin with a clear understanding of the problem being solved, the outcome that is needed and the boundaries around it. Implementation should come after that understanding, not before it.",
     },
     {
-      title: "Break down the complexity",
+      title: "Break down complexity",
       description:
           "Large problems should be decomposed into smaller, independently deliverable pieces. Each piece should be understandable, implementable and verifiable on its own so that complexity is reduced rather than carried forward.",
       emphasis:
           "Turn one difficult problem into several understandable ones.",
     },
     {
-      title: "Describe the behaviour",
+      title: "Describe behaviour",
       description:
           "For each smaller problem, behaviour tests should describe the outcome that needs to be achieved. They do not need to cover every possible scenario; their purpose is to prove that the problem being worked on has actually been solved.",
     },
     {
-      title: "Test the use cases",
+      title: "Test use cases",
       description:
           "Unit tests should be driven by real use cases rather than implementation details. Instead of testing every branch or if statement simply to increase coverage, the important question is what user or system scenario would actually cause the code to behave that way. If a meaningful scenario exists, it should be tested.",
       emphasis:
