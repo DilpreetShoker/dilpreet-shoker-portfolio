@@ -1,11 +1,7 @@
 export const socialLinks = [
     {
-        label: "GitHub",
-        href: "YOUR_GITHUB_URL",
-    },
-    {
         label: "LinkedIn",
-        href: "YOUR_LINKEDIN_URL",
+        href: "https://www.linkedin.com/in/dilpreet-singh-shoker/",
     },
     {
         label: "Email",
