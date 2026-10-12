@@ -50,5 +50,5 @@ export const profile = {
         items: aboutItems,
     },
 
-    cvPath: "/cv/dilpreet-singh-cv.pdf",
+    cvPath: "/cv/dilpreet-cv.pdf",
 } as const;
